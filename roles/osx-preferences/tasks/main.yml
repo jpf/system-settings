@@ -1,0 +1,26 @@
+---
+# https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+- name: "Enable full keyboard access for all controls"
+  shell: defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
+
+- name: "Require password immediately after sleep or screen saver begins"
+  shell: defaults write com.apple.screensaver askForPassword -int 1
+  shell: defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+- name: "Tap to click"
+  shell: defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+  shell: defaults write com.apple.AppleMultitouchTrackpad Clicking 1
+
+- name: "Tap with two fingers to emulate right click"
+  shell: defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+
+- name: "Enable Secondary click on mouse"
+  shell: defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton
+
+- name: "Disable audible bell and enable visual bell"
+  shell: defaults write com.apple.Terminal Bell 0
+  shell: defaults write com.apple.Terminal VisualBell 1
+
+- name: "Set Bottom Right 'Hot Corner' to start screen saver"
+  shell: defaults write com.apple.dock "wvous-br-corner" -int 5
+  shell: defaults write com.apple.dock "wvous-br-modifier" -int 0

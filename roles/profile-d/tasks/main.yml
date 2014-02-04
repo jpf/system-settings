@@ -1,0 +1,10 @@
+---
+- name: "Clone git repo for .profile.d"
+  git: repo=https://github.com/jpf/.profile.d.git
+       dest={{ ansible_env.HOME }}/.profile.d
+
+- name: "Setup symbolic link for .profile.d"
+  file: src={{ ansible_env.HOME }}/.profile.d/.bash_profile
+        dest={{ ansible_env.HOME }}/.bash_profile
+        state=link
+
