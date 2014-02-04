@@ -1,5 +1,8 @@
 ---
 - hosts: all
+  roles:
+    - osx-preferences
+    - profile-d
   # http://www.nickhammond.com/automating-development-environment-ansible/
   tasks:  
     - name: Install libraries with homebrew
@@ -20,12 +23,9 @@
         - google-chrome
         - kindle
         - limechat
+        - onepassword
         - quicksilver
         - rdio
         - seashore
         - skitch
         - skype
-
-
-
-
