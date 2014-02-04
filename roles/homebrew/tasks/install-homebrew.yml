@@ -1,0 +1,22 @@
+---
+# Inspired by: 
+# https://github.com/ideasonpurpose/ansible-playbooks/blob/master/roles/homebrew/tasks/install-homebrew.yml
+- name: Check for Homebrew
+  stat: path=/usr/local/bin/brew
+  register: brew_installed
+
+- name: Download Homebrew
+  get_url: url=https://github.com/mxcl/homebrew/tarball/master dest=/tmp/homebrew.tgz
+  when: not brew_installed.stat.exists
+
+- name: Make sure Homebrew directories exist
+  file: path={{ item }} state=directory owner={{ ansible_env.USER }} group=admin recurse=yes
+  sudo: yes
+  with_items: 
+    - /usr/local 
+    - /Library/Caches/Homebrew
+
+- name: Install Homebrew
+  command: 'tar xzf /tmp/homebrew.tgz --strip 1 -C /usr/local'
+  sudo: yes
+  when: not brew_installed.stat.exists

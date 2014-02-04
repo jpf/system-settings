@@ -1,0 +1,3 @@
+---
+- include: install-homebrew.yml
+- include: install-applications.yml

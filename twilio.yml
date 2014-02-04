@@ -1,0 +1,31 @@
+---
+- hosts: all
+  # http://www.nickhammond.com/automating-development-environment-ansible/
+  tasks:  
+    - name: Install libraries with homebrew
+      homebrew: name={{ item }} state=present
+      with_items:
+        - wget
+        - git
+
+    - name: Cask installs
+      environment: {PATH: '/usr/local/bin:{{ ansible_env.PATH }}'}
+      shell: /usr/local/bin/brew cask install {{ item }} --appdir=/Users/{{ ansible_env.USER }}/Applications
+      with_items:
+        - adium
+        - caffeine
+        - dropbox
+        - evernote
+        - firefox
+        - google-chrome
+        - kindle
+        - limechat
+        - quicksilver
+        - rdio
+        - seashore
+        - skitch
+        - skype
+
+
+
+
