@@ -8,8 +8,9 @@
     - name: Install libraries with homebrew
       homebrew: name={{ item }} state=present
       with_items:
-        - wget
         - git
+        - go
+        - wget
 
     - name: Cask installs
       environment: {PATH: '/usr/local/bin:{{ ansible_env.PATH }}'}
