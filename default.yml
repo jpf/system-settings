@@ -17,7 +17,11 @@
       with_items:
         - adium
         - caffeine
+        - dash
+        - disk-inventory-x
+        - divvy
         - dropbox
+        - emacs
         - evernote
         - firefox
         - google-chrome
@@ -29,3 +33,7 @@
         - seashore
         - skitch
         - skype
+        - the-unarchiver
+        - viscosity
+        - vlc
+        - wireshark
