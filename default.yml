@@ -11,6 +11,7 @@
         - chicken
         - git
         - go
+        - mosh
         - wget
 
     - name: Cask installs
