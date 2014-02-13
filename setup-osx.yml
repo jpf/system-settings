@@ -3,4 +3,9 @@
   roles:
      - homebrew
      - homebrew-cask
-
+  tasks:  
+    - name: Install pip packages
+      pip: name={{ item }} state=present
+      with_items:
+        - virtualenv
+      sudo: yes
