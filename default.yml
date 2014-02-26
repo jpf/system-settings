@@ -11,7 +11,9 @@
         - chicken
         - git
         - go
-        - mosh
+        - heroku-toolbelt
+        - ispell
+        - mobile-shell
         - wget
 
     - name: Cask installs
@@ -19,6 +21,7 @@
       shell: /usr/local/bin/brew cask install {{ item }} --appdir=/Users/{{ ansible_env.USER }}/Applications
       with_items:
         - adium
+        - basictex
         - caffeine
         - dash
         - disk-inventory-x
