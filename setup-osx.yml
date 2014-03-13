@@ -8,4 +8,6 @@
       pip: name={{ item }} state=present
       with_items:
         - virtualenv
+        - flake8
+        - bpython
       sudo: yes
