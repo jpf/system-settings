@@ -8,3 +8,8 @@
         dest={{ ansible_env.HOME }}/.bash_profile
         state=link
 
+- name: "Setup symbolic link for .emacs.d"
+  file: src={{ ansible_env.HOME }}/.profile.d/.emacs.d
+        dest={{ ansible_env.HOME }}/.emacs.d
+        state=link
+
