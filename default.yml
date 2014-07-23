@@ -5,6 +5,38 @@
     - profile-d
   # http://www.nickhammond.com/automating-development-environment-ansible/
   tasks:  
+    - name: homebrew Cask installs
+      environment: {PATH: '/usr/local/bin:{{ ansible_env.PATH }}'}
+      shell: /usr/local/bin/brew cask install {{ item }} --appdir=/Users/{{ ansible_env.USER }}/Applications
+      with_items:
+        - adium
+        - aquamacs
+        - basictex
+        - box-sync
+        - caffeine
+        - dash
+        - disk-inventory-x
+        - divvy
+        - dropbox
+        - emacs
+        - evernote
+        - firefox
+        - google-chrome
+        - gpgtools
+        - kindle
+        - limechat
+        - onepassword
+        - quicksilver
+        - rdio
+        - seashore
+        - skitch
+        - skype
+        - the-unarchiver
+        - viscosity
+        - vlc
+        - wireshark
+        - xquartz
+
     - name: Install libraries with homebrew
       homebrew: name={{ item }} state=present
       with_items:
@@ -28,32 +60,3 @@
       gem: name={{ item }} state=present
       with_items:
         - foreman
-
-    - name: Cask installs
-      environment: {PATH: '/usr/local/bin:{{ ansible_env.PATH }}'}
-      shell: /usr/local/bin/brew cask install {{ item }} --appdir=/Users/{{ ansible_env.USER }}/Applications
-      with_items:
-        - adium
-        - basictex
-        - caffeine
-        - dash
-        - disk-inventory-x
-        - divvy
-        - dropbox
-        - emacs
-        - evernote
-        - firefox
-        - google-chrome
-        - gpgtools
-        - kindle
-        - limechat
-        - onepassword
-        - quicksilver
-        - rdio
-        - seashore
-        - skitch
-        - skype
-        - the-unarchiver
-        - viscosity
-        - vlc
-        - wireshark
