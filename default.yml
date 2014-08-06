@@ -11,6 +11,7 @@
       with_items:
         - adium
         - aquamacs
+        # TODO: Automate installation of Aquamacs command-line tools too
         - basictex
         - box-sync
         - caffeine
@@ -43,14 +44,16 @@
       with_items:
         - chicken
         - git
-        - go
         - gnupg
+        - go
         - heroku-toolbelt
+        - httpie
         - ispell
         - mobile-shell
         - node
         - tiger-vnc
         - wget
+        - xmlstarlet
 
     - name: Install npm packages
       npm: name={{ item }} global=yes state=present
