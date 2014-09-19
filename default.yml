@@ -38,18 +38,23 @@
         - vlc
         - wireshark
         - xquartz
+        - zotero
 
     - name: Install libraries with homebrew
       homebrew: name={{ item }} state=present
       with_items:
         - chicken
+        - elinks
         - git
+        - gnu-tar
         - gnupg
         - go
         - heroku-toolbelt
         - httpie
         - ispell
+        - lesspipe
         - mobile-shell
+        - mono
         - node
         - tiger-vnc
         - wget
@@ -59,6 +64,7 @@
       npm: name={{ item }} global=yes state=present
       with_items:
         - keybase-installer
+        - azure-cli
 
     - name: Install gems
       gem: name={{ item }} state=present
