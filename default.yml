@@ -58,6 +58,7 @@
         - mono
         - ngrok
         - node
+        - pandoc
         - tiger-vnc
         - typesafe-activator
         - wget
