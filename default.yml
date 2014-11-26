@@ -44,6 +44,7 @@
       homebrew: name={{ item }} state=present
       with_items:
         - chicken
+        - dos2unix
         - elinks
         - git
         - gnu-tar
@@ -55,8 +56,10 @@
         - lesspipe
         - mobile-shell
         - mono
+        - ngrok
         - node
         - tiger-vnc
+        - typesafe-activator
         - wget
         - xmlstarlet
 
