@@ -45,6 +45,7 @@
       with_items:
         - chicken
         - dos2unix
+        - dtrx
         - elinks
         - git
         - gnu-tar
